@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>신규유저 이벤트 - 검은사막 | Daum게임</title>
+    <script type="text/javascript" src="http://s1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.8.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../ver01/comeback.css">
+    <style>
+        .link_tab {background-color:skyblue}
+        .on .link_tab {background-color:tan}
+        .wrap_tab {display: none;}
+    </style>
+</head>
+
+<body>
+    <div id="daumPromotion" class="event_beginner">
+        <div id="daumHead" class="event_head">
+            <div class="inner_head">
+                <h1 class="tit_logo"><a href="#none" target="_blank" class="img_event">검은사막</a></h1>
+                <a href="#none" class="img_event link_gohome">홈페이지 바로가기</a>
+                <h2 class="screen_out">신규/복귀 유저 이벤트 메뉴</h2>
+                <ul id="myTab" class="list_tab">
+                    <li class="on">
+                        <a href="#tab01" class="link_tab" >검은사막은 처음인가요? 환영합니다 모험가님!</a>
+                    </li>
+                    <li>
+                        <a href="#tab02" class="link_tab" >오랜만에 오셨네요! 그리웠어요, 모험가님!</a>
+                    </li>
+                </ul>
+                <h2 class="ir_pm">환영합니다 모험가님!</h2>
+                <p class="ir_pm">신규 모험가님의 검은사막 원정을 위한 다양한 혜택과 필수 TIP을 확인하세요!</p>
+            </div>
+        </div>
+        <hr class="hide">
+        <div id="daumContent" class="event_cont">
+           <div id="tab01" class="wrap_tab" data-index="0" style="background:yellow;height:1000px"></div>
+            <div id="tab02" class="wrap_tab" data-index="1" style="background:pink;height:1000px"></div>
+        </div>
+        <a href="#daumPromotion" class="img_event link_gotop">맨위로</a>
+        <hr class="hide">
+        <div id="daumFoot" class="event_foot">
+            <small class="img_event info_copyright">Copyright &copy; <a href="http://game.daum.net" target="_blank" class="link_daumgame">Daumgames</a> Co.,Ltd.</small>
+        </div>
+    </div>
+    
+    <script>
+        var myTab=document.getElementById("myTab"),
+              listTab=myTab.children,
+              linkTab=myTab.getElementsByTagName("a"),
+              tabArea=[];
+        
+        for(var i=0;i<listTab.length;i++){
+            var dataIndex='[data-index="'+i+'"]';
+                tabArea=document.querySelectorAll(dataIndex);
+            
+                if(listTab[i].className == "on") { 
+                    tabArea[0].style.display="block";
+               }
+            console.log(tabArea)
+            linkTab[i].addEventListener("click", function (e) {
+            
+                e.preventDefault();
+                var tabId=e.target.href.split("#");
+                for(var j=0;j<listTab.length;j++){
+                    
+                    listTab[j].className="";
+                   // tabArea[j].style.display="none";
+                    console.log(tabArea[j],j)
+                }
+                this.parentNode.className="on"; 
+                document.getElementById(tabId[1]).style.display="block";
+            }, false);
+        }
+//        for(var i=0;i<linkTab.length;i++){
+//            linkTab[i].addEventListener("click", function (e) {
+//                e.preventDefault();
+//                this.parentNode.className="on";
+//                var tabHref=e.target.href,
+//                     tabId=tabHref.split("#"),
+//                     tabArea = document.getElementById(tabId[1]);
+//                     tabArea.style.display="block";
+//            
+//            }, false);
+//        }
+       
+    </script>
+</body>
+
+</html>
