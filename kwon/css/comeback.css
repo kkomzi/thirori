@@ -30,16 +30,19 @@ address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
 .img_event {display:block;overflow:hidden;font-size:0;line-height:0;background:url(http://i1.gamecdn.net/img-contents/event/promotion/150716_black/img_event.png) no-repeat;text-indent:-9999px}
 #daumPromotion {overflow:hidden;width:100%;min-width:1258px}
 .event_head {width:100%;height:599px;background:url(http://i1.gamecdn.net/img-contents/event/promotion/150716_black/bg_head_evt1.jpg) no-repeat 50% 0}
-.event_head .inner_head {overflow:hidden;width:1108px;height:599px;margin:0 auto;background:url(http://i1.gamecdn.net/img-contents/event/promotion/150716_black/evt1_head.jpg) no-repeat}
+.event_head .inner_head {overflow:hidden;width:1108px;height:509px;margin:0 auto;background:url(http://i1.gamecdn.net/img-contents/event/promotion/150716_black/evt1_head.jpg) no-repeat}
 .tit_logo {float:left;width:100px;height:40px;padding:15px 0 0 3px;margin-right:854px}
 .tit_logo .img_event {width:96px;height:26px}
 .link_gohome {float:left;width:146px;height:20px;margin-top:19px;background-position:-100px 0}
-.list_tab {overflow:hidden;width:1100px;height:91px;padding:453px 4px 0;clear:both}
+.list_tab {overflow:hidden;position:absolute;top:508px;left:50%;margin-left:-550px;background:#d95610;width:1100px;height:91px;;clear:both}
 .list_tab li {float:left;width:550px;height:91px}
-.list_tab .on {background-color:red}
-.list_tab .link_tab {display:block;overflow:hidden;height:91px;font-size:0;line-height:0;text-indent:-9999px}
+.list_tab a {display:block;overflow:hidden;height:91px;font-size:20px;line-height:91px;color:white;text-align:center;}
+.list_tab .on a {background:#f5f5f5;color:black;}
+.list_tab .on {background:#f5f5f5;color:black}
 
-.event_cont {width:100%;height:3064px;background:url(http://i1.gamecdn.net/img-contents/event/promotion/150716_black/bg_cont_evt1.jpg) no-repeat 50% 0}
+/*.event_cont {width:100%;height:3064px;background:url(http://i1.gamecdn.net/img-contents/event/promotion/150716_black/bg_cont_evt1.jpg) no-repeat 50% 0}
+.event_cont .event_comm {overflow:hidden;width:1108px;margin:0 auto}*/
+.event_cont {width:100%;margin-top:30px;}
 .event_cont .event_comm {overflow:hidden;width:1108px;margin:0 auto} 
 .event_cont .event_black01 {height:702px;background:url(http://i1.gamecdn.net/img-contents/event/promotion/150716_black/evt1_cont1_150723.jpg) no-repeat}
 .event_cont .event_black02 {height:575px;background:url(http://i1.gamecdn.net/img-contents/event/promotion/150716_black/evt1_cont2_150723.jpg) no-repeat}
@@ -56,7 +59,8 @@ address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
 .list_contents .link_contents3 {background-position:0 -180px}
 .list_contents .link_contents4 {background-position:-170px -180px}
 .list_contents .link_contents5 {background-position:0 -230px}
-.link_gotop {position:fixed;top:50%;left:50%;width:80px;height:80px;margin:124px 0 0 585px;background-position:0 -30px}
+/*.link_gotop {position:fixed;top:50%;left:50%;width:80px;height:80px;margin:124px 0 0 585px;background-position:0 -30px} */
+.link_gotop {position:fixed;bottom:10px;left:50%;width:80px;height:80px;margin-left:505px;background-position:0 -30px}
 .event_foot {width:100%;height:136px;background:url(http://i1.gamecdn.net/img-contents/event/promotion/150716_black/bg_foot_evt1.jpg) no-repeat 50% 0}
 .event_foot .info_copyright {width:195px;height:17px;margin:0 auto;background-position:0 -280px}
 .event_foot .link_daumgame {display:block;height:17px}
