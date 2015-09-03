@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>탭탭</title>
+</head>
+<body>
+<style>
+ul {list-style:none;}
+a {text-decoration:none;}
+#listTab {overflow:hidden;padding:50px 0 0;margin:0}
+#listTab li {float:left;width:100px}
+#listTab a {display:block;height:35px;padding-top:15px;font-weight:bold;color:#fff;background-color:grey;text-align:center}
+#listTab .on a {color:#fff;background-color:#2C2C2C}
+
+</style>
+
+
+<ul id="listTab">
+	<li class="on"><a href="#tab0">탭1</a></li>
+	<li><a href="#tab1">탭2</a></li>	
+	<li><a href="#tab2">탭3</a></li>
+	<li><a href="#tab3">탭4</a></li>
+</ul>
+
+<div id="tab0" class="tab" style="display:block">tab1</div>
+<div id="tab1" class="tab" style="display:none">tab2</div>
+<div id="tab2" class="tab" style="display:none">tab3</div>
+<div id="tab3" class="tab" style="display:none">tab4</div>
+
+
+
+<script>
+
+window.onload = function() {
+	var linkArray = document.getElementById("listTab").getElementsByTagName("a") // 탭링크 배열 
+
+	for(var i = 0; i < linkArray.length; i++) { // 배열이니께 돌리고
+
+
+		linkArray[i].onclick = function() { // 그중에 하나 클릭하면
+			var link = this.getAttribute("href") // 링크 href 가져오고
+				, linkCut = link.split("#") // id값가져와야하니깐 #빼고 tab0 tab1 tab2 tab3 배열임
+				, link2 = ""
+				, linkCut2 = [];
+
+			
+			// on빼고 block빼고 _ 초기화
+			for(var i=0;i<linkArray.length;i++) { 
+				linkArray[i].parentNode.className = ""; // on뺌
+				link2 = linkArray[i].getAttribute("href"); //
+				linkCut2 = link2.split("#");
+
+				document.getElementById(linkCut2[1]).style.display = "none"; //div none
+				
+			};
+
+console.log(linkCut)
+			this.parentNode.className = "on" // 탭에 on 추가
+			document.getElementById(linkCut[1]).style.display = "block"; //div block
+
+		};
+
+	};
+	
+
+}
+
+
+
+</script>
+
+</body>
+</html>
