@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+ 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>두번| Daum게임</title>
+    <script type="text/javascript" src="http://s1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.8.3.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="css/comeback.css">
+ 
+        <script type="text/javascript">
+    //<![CDATA[
+
+    var tabLinks = new Array();
+    var contentDivs = new Array();
+
+    function init() {
+
+      // Grab the tab links and content divs from the page
+      var tabListItems = document.getElementById('tabs').childNodes; 
+      
+      for ( var i = 0; i < tabListItems.length; i++ ) {  
+        if ( tabListItems[i].nodeName == "LI" ) {
+          var tabLink = getFirstChildWithTagName( tabListItems[i], 'A' );
+          var id = getHash( tabLink.getAttribute('href') );
+          tabLinks[id] = tabLink;
+          contentDivs[id] = document.getElementById( id );
+        }
+      }
+
+      // Assign onclick events to the tab links, and
+      // highlight the first tab
+      var i = 0;
+
+      for ( var id in tabLinks ) {
+        tabLinks[id].onclick = showTab;
+        tabLinks[id].onfocus = function() { this.blur() };
+        if ( i == 0 ) tabLinks[id].className = 'on';
+        i++;
+      }
+
+      // Hide all content divs except the first
+      var i = 0;
+
+      for ( var id in contentDivs ) {
+        if ( i != 0 ) contentDivs[id].className = 'event_cont hide';
+        i++;
+      }
+    }
+
+    function showTab() {
+      var selectedId = getHash( this.getAttribute('href') );
+
+      // Highlight the selected tab, and dim all others.
+      // Also show the selected content div, and hide all others.
+      for ( var id in contentDivs ) {
+        if ( id == selectedId ) {
+          tabLinks[id].className = 'on';
+          contentDivs[id].className = 'event_cont';
+        } else {
+          tabLinks[id].className = '';
+          contentDivs[id].className = 'event_cont hide';
+        }
+      }
+
+      // Stop the browser following the link
+      return false;
+    }
+
+    function getFirstChildWithTagName( element, tagName ) {
+      for ( var i = 0; i < element.childNodes.length; i++ ) {
+        if ( element.childNodes[i].nodeName == tagName ) return element.childNodes[i];
+      }
+    }
+
+    function getHash( url ) {
+      var hashPos = url.lastIndexOf ( '#' );
+      return url.substring( hashPos + 1 );
+    }
+
+    //]]>
+    </script>
+</head>
+ 
+<body onload="init()">
+    <div id="daumPromotion" class="event_beginner">
+        <div id="daumHead" class="event_head">
+            <div class="inner_head">
+                <h1 class="tit_logo"><a href="#none" target="_blank" class="img_event">검은사막</a></h1>
+                <a href="#none" class="img_event link_gohome">홈페이지 바로가기</a>
+            </div>
+        </div>
+        <hr class="hide">
+        <h2 class="screen_out">신규/복귀 유저 이벤트 메뉴</h2>
+         <ul class="list_tab" id="tabs">
+            <li><a href="#welcome" class="link_tab">검은사막은 처음인가요? 환영합니다 모험가님!</a> </li>
+            <li><a href="#missu" class="link_tab">오랜만에 오셨네요! 그리웠어요, 모험가님!</a></li>
+        </ul>
+        <!--첫번째 탭내용 -->
+        <div class="event_cont" id="welcome">
+            <div class="event_comm event_black01" >
+                <h3 class="ir_pm">신규 모험가 전용 혜택1</h3>
+                <h4 class="ir_pm">신규 캐릭터만 생성해도 원정을 떠나기 위한 필수 아이템 즉시 지급해드립니다.</h4>
+                <ul class="ir_pm">
+                    <li>아바타 의상세트 칼슈타인(7일)</li>
+                    <li>밸류 패키지(7일)</li>
+                    <li>전투 경험치 50% 버프(1시간)</li>
+                    <li>칼리스 귀걸이, 반지</li>
+                    <li> 바레스 목걸이, 허리띠</li>
+                    <li> 아제리안 방어구</li>
+                    <li>+8아스웰 무기</li>
+                </ul>
+                <em class="ir_pm">아이템은 도전 과제를 통해 획득 가능합니다.</em>
+                <em class="ir_pm">밸류 패키지(7일)는 아이템 획득 초과시 효과가 즉시 적용 됩니다.</em>
+            </div>
+            <div class="event_comm event_black01" >
+                <h3 class="ir_pm">신규 모험가 전용 혜택1</h3>
+                <h4 class="ir_pm">신규 캐릭터만 생성해도 원정을 떠나기 위한 필수 아이템 즉시 지급해드립니다.</h4>
+                <ul class="ir_pm">
+                    <li>아바타 의상세트 칼슈타인(7일)</li>
+                    <li>밸류 패키지(7일)</li>
+                    <li>전투 경험치 50% 버프(1시간)</li>
+                    <li>칼리스 귀걸이, 반지</li>
+                    <li> 바레스 목걸이, 허리띠</li>
+                    <li> 아제리안 방어구</li>
+                    <li>+8아스웰 무기</li>
+                </ul>
+                <em class="ir_pm">아이템은 도전 과제를 통해 획득 가능합니다.</em>
+                <em class="ir_pm">밸류 패키지(7일)는 아이템 획득 초과시 효과가 즉시 적용 됩니다.</em>
+            </div>
+        </div>
+        <!-- 두 번째 탭내용-->
+        <div class="event_cont" id="missu">
+            <div class="event_comm event_black04">
+                <h3 class="ir_pm">신규 모험가 정착 TIP 본격적인 검은사막 원정을 떠나기전, 이것만 알고 가세요!</h3>
+                <h4 class="ir_pm">나만의 특별한 캐릭터를 만드세요.</h4>
+                <strong class="ir_pm">머리부터 발끝까지 나만의 스타일로 특별한 캐릭터를 만드는 방법!</strong>
+                <a href="#none" class="img_event link_guide">커스터마이징 가이드</a>
+                <strong class="ir_pm">캐릭터 만들기, 어려우신가요? 다른 모험가분들의 소스를 공유 받으세요!</strong>
+                <a href="#none" class="img_event link_source">커스터마이징 소스 얻기</a>
+                <h4 class="ir_pm">전투 외에도 다양한 검은사막의 컨텐츠를 경험하세요.</h4>
+                <ul class="list_contents">
+                    <li><a href="#none" class="img_event link_contents1">거상을 향한 무역의 시작과 끝 <em>무역</em></a></li>
+                    <li><a href="#none" class="img_event link_contents2">만들고,쓰고,팔고!<em>제작</em></a></li>
+                    <li><a href="#none" class="img_event link_contents3">강태공의 힘!<em>낚시</em></a></li>
+                    <li><a href="#none" class="img_event link_contents4">나만의 보금자리<em>하우징</em></a> </li>
+                    <li><a href="#none" class="img_event link_contents5">검은사막의 이동수단<em>탈것의 모든 것</em></a></li>
+                </ul>
+            </div>
+        </div> 
+        
+        <a href="#daumPromotion" class="img_event link_gotop">맨위로</a>
+        <hr class="hide">
+        <div id="daumFoot" class="event_foot">
+            <small class="img_event info_copyright">Copyright &copy; <a href="http://game.daum.net" target="_blank" class="link_daumgame">Daumgames</a> Co.,Ltd.</small>
+        </div>
+    </div>
+</body>
+ 
+</html>
