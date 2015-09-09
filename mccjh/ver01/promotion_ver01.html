@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>신규유저 이벤트 - 검은사막 | Daum게임</title>
@@ -21,10 +22,10 @@
                 <h2 class="screen_out">신규/복귀 유저 이벤트 메뉴</h2>
                 <ul id="myTab" class="list_tab">
                     <li class="on">
-                        <a href="#tab01" class="link_tab" >검은사막은 처음인가요? 환영합니다 모험가님!</a>
+                        <a href="#none" class="link_tab" >검은사막은 처음인가요? 환영합니다 모험가님!</a>
                     </li>
                     <li>
-                        <a href="#tab02" class="link_tab" >오랜만에 오셨네요! 그리웠어요, 모험가님!</a>
+                        <a href="#none" class="link_tab" >오랜만에 오셨네요! 그리웠어요, 모험가님!</a>
                     </li>
                 </ul>
                 <h2 class="ir_pm">환영합니다 모험가님!</h2>
@@ -49,40 +50,39 @@
               linkTab=myTab.getElementsByTagName("a"),
               tabArea=[];
         
-        for(var i=0;i<listTab.length;i++){
-            var dataIndex='[data-index="'+i+'"]';
-                tabArea=document.querySelectorAll(dataIndex);
-            
-                if(listTab[i].className == "on") { 
-                    tabArea[0].style.display="block";
-               }
-            console.log(tabArea)
-            linkTab[i].addEventListener("click", function (e) {
-            
-                e.preventDefault();
-                var tabId=e.target.href.split("#");
-                for(var j=0;j<listTab.length;j++){
-                    
-                    listTab[j].className="";
-                   // tabArea[j].style.display="none";
-                    console.log(tabArea[j],j)
+            function setClassName(elem,name){
+                if(elem.length){
+                    for(var i=0;i<elem.length;i++){
+                        elem[i].className=name;
+                    }
+                }else{
+                    elem.className=name;
                 }
-                this.parentNode.className="on"; 
-                document.getElementById(tabId[1]).style.display="block";
-            }, false);
-        }
-//        for(var i=0;i<linkTab.length;i++){
-//            linkTab[i].addEventListener("click", function (e) {
-//                e.preventDefault();
-//                this.parentNode.className="on";
-//                var tabHref=e.target.href,
-//                     tabId=tabHref.split("#"),
-//                     tabArea = document.getElementById(tabId[1]);
-//                     tabArea.style.display="block";
-//            
-//            }, false);
-//        }
-       
+            }
+            function setDisplay(elem,value){
+                if(elem.length){
+                    for(var i=0;i<elem.length;i++){
+                        elem[i].style.display=value;
+                    }
+                }else{
+                    elem.style.display=value;
+                }
+            }
+            
+            for(var i=0;i<listTab.length;i++){
+                var dataIndex='[data-index="'+i+'"]';
+                tabArea[i]=document.querySelectorAll(dataIndex)[0];
+                if(listTab[i].className=="on")tabArea[i].style.display="block";
+                
+                (function(m){
+                    linkTab[m].addEventListener("click",function(){
+                         setClassName(listTab,"");
+                         setClassName(this.parentNode,"on");
+                         setDisplay(tabArea,"none");
+                         setDisplay(tabArea[m],"block");
+                    })
+                })(i)
+            }
     </script>
 </body>
 
