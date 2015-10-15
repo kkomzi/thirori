@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<title>레이어</title>
+</head>
+<body>
+<style>
+	#layerType1 {width:100px;height:100px;background-color:cadetblue}
+</style>
+
+
+	<a href="#none" id="linkLayer" data-state="off">레이어열기</a>
+	<div id="layerType1" style="display: none">
+		<div class="inner">
+			<strong>레이어예여</strong>
+			<a href="#none" id="btnClose">닫기</a>
+		</div>
+	</div>
+
+<script>
+
+window.onload = function() {
+	var linkLayer = document.getElementById("linkLayer")
+	, btnClose = document.getElementById("btnClose")
+	, layer = document.getElementById("layerType1");
+		
+	linkLayer.onclick = function() {
+		var this = that;
+		toggleLayer(that);
+	} // linkLayer
+	
+	btnClose.onclick = function() {
+		toggleLayer(linkLayer);
+	} // btnClose
+	
+	function toggleLayer(target) {
+		var linkState = linkLayer.getAttribute("data-state");
+		
+		if(linkState == "off") {
+			layer.style.display = "block";
+			target.setAttribute("data-state" , "on");
+		}else {
+			layer.style.display = "none";
+			target.setAttribute("data-state" , "off");
+		};
+		
+	};
+}
+</script>
+
+</body>
+</html>
