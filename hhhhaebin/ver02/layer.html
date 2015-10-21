@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>삼국지 이터널 | Daum 게임</title>
+</head>
+<style type="text/css">
+@charset "utf-8";
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0}
+fieldset,img{border:0 none}
+dl,ul,ol,menu,li {list-style:none}
+blockquote, q {quotes: none}
+blockquote:before, blockquote:after,q:before, q:after {content:'';content:none}
+input,select,textarea,button {vertical-align:middle}
+input::-ms-clear {display:none}
+button {border:0 none;background-color:transparent;cursor:pointer}
+body {background:#000}
+body,th,td,input,select,textarea,button {font-size:12px;line-height:1.5;font-family:'맑은 고딕','Malgun Gothic',sans-serif;color:#333}
+a {color:#333;text-decoration:none}
+a:active, a:hover {text-decoration:underline}
+a:active {background-color:transparent}
+address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
+/* global */
+#daumIndex {overflow:hidden;position:absolute;left:-9999px;width:0;height:1px;margin:0;padding:0}
+.ir_pm {display:block;overflow:hidden;font-size:0px;line-height:0;text-indent:-9999px}
+.ir_wa {display:block;overflow:hidden;position:relative;z-index:-1;width:100%;height:100%}
+.screen_out {overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+.f_l {float:left}
+.f_r {float:right}
+.cl_b {clear:both;width:0;height:0;font-size:0;line-height:0}
+.show {display:block}
+.hide {display:none}
+.tbl {border-collapse:collapse;border-spacing: 0}
+.clear_g {display:block;overflow:visible;width:auto;clear:both;*zoom:1}
+.clear_g:after {display:block;visibility:hidden;height:0;font-size:0;clear:both;content:''}
+
+
+.img_eternal {display:block;overflow:hidden;font-size:0;line-height:0;background:url(http://i1.gamecdn.net/pub/3eternal/teaser/img_eternal.png) no-repeat;text-indent:-9999px}
+.ico_eternal {background:url(http://i1.gamecdn.net/pub/3eternal/teaser/ico_eternal.png) no-repeat}
+
+#daumPromotion {position:relative;margin:0 auto;background:#000 url(http://i1.gamecdn.net/pub/3eternal/teaser/bg_cover.jpg) no-repeat 50% 4px}
+#daumContent {position:relative;overflow:hidden;width:100%;max-width:1920px;height:1040px;margin:0 auto;}
+.tit_eternal {position:absolute;top:0;left:50%;z-index:100;width:240px;height:180px;margin-left:-956px}
+.tit_eternal .img_eternal {width:240px;height:180px;background-position:-560px -220px}
+.tit_event {position:absolute;top:86px;left:50%;margin-left:-523px;z-index:100;width:1042px;height:220px}
+.link_video {display:block;position:absolute;top:310px;left:50%;margin-left:-85px;width:170px;height:40px;background-position:-800px -220px}
+.link_video:hover {background-position:-800px -280px}
+
+.link_apply {position:absolute;bottom:44px;left:50%;margin-left:-273px;width:537px;height:231px;background-position:0 -220px}
+.link_apply:hover {background-position:0 -460px}
+
+.list_sns {overflow:hidden;position:absolute;bottom:27px;left:50%;z-index:100;width:144px;height:38px;margin-left:-910px}
+.list_sns li {float:left;width:38px;height:38px;margin-right:10px}
+.list_sns li .img_eternal {width:38px;height:38px}
+.list_sns li .link_twi {background-position: -860px -400px}
+.list_sns li .link_face {background-position: -900px -400px}
+.list_sns li .link_story {background-position: -940px -400px}
+.list_sns li .link_twi:hover {background-position: -860px -460px}
+.list_sns li .link_face:hover:hover {background-position: -900px -460px}
+.list_sns li .link_story:hover {background-position: -940px -460px}
+.eternal_foot {overflow:hidden;position:absolute;bottom:19px;left:50%;z-index:100;width:345px;height:51px;margin-left:597px}
+.eternal_foot .address_copyright {float:left;margin:12px 23px 0 0;font-size:12px;font-family:Tahoma;color:#fff}
+.eternal_foot .address_copyright .link_copyright {color:#fff}
+.eternal_foot .link_daumgames {float:left;width:62px;height:31px;margin-top:4px;background-position:-800px -330px}
+.eternal_foot .link_company {float:right;width:43px;height:51px;background-position:-880px -330px}
+
+#dimmedLayer {position:absolute;top:0;left:0;z-index:9998;width:100%;background-color:#000;opacity:0.7;filter:Alpha(Opacity=70)}
+.txt_g {color:#ca3e00}  
+.eternal_layer {position:absolute;top:226px;left:50%;z-index:9999;width:532px;height:541px;margin-left:-290px;padding:26px 24px 29px;background-color:#fff}
+.eternal_layer .layer_head {margin-bottom:10px;font-size:16px;color:#696969;line-height:20px;text-align:center;letter-spacing:-1px}
+.eternal_layer .layer_head .img_eternal {width:238px;height:30px;margin:0 auto 5px;background-position:-557px -400px}
+.eternal_layer .layer_body {padding:24px 20px 5px;margin-top:19px;border:1px solid #e5e5e5;background-color:#f7f7f7}
+
+.cont_apply {padding:13px 0 0 25px}
+.event_phone {height:51px;margin-bottom:28px}
+.opt_comm {position:relative;z-index:200;float:left;width:124px;height:51px;background:url(http://i1.gamecdn.net/pub/3eternal/teaser/img_eternal.png) no-repeat;background-position:-560px -460px;color:#666}
+.opt_comm .link_selected {display:block;width:94px;height:50px;padding-left:33px;font-size:16px;line-height:51px;text-align:left}
+.opt_comm .link_selected:hover {text-decoration:none}
+.opt_comm .box_opt {display:none;z-index:100;position:absolute;left:0;top:45px;background-color:#fff}
+.opt_comm .list_opt {width:118px;padding:10px 0;border:3px solid #7d7d7d;border-radius:0 0 9px 9px;text-align:center}
+.opt_comm .list_opt li {padding:3px 10px}
+.opt_comm .list_opt .link_option {font-size:16px}
+.opt_comm .list_opt .on .link_option {font-weight:bold}
+.opt_open .link_selected:hover {text-decoration:none}
+.opt_open .box_opt {display:block}
+.tf_phone {float:left;width:144px;height:51px;margin-left:12px;border:0 none;line-height:51px;font-size:16px;background:url(http://i1.gamecdn.net/pub/3eternal/teaser/img_eternal.png) no-repeat;background-position:-690px -460px;text-align:center}
+
+.check_agree {position:relative;height:24px;margin-left:4px}
+.check_agree .inp_check {position:absolute;top:0;left:0;z-index:-1;width:21px;height:21px;border:none;opacity:0.01}
+.check_agree .lab_check {height:20px;padding-left:29px;font-weight:bold;font-size:16px;line-height:20px;letter-spacing:-1px;cursor:pointer}
+.check_agree .ico_agreecheck {position:absolute;top:0;left:0;width:21px;height:21px;background-position:-960px -510px;pointer-events:none}
+.check_agree .on .ico_agreecheck {background-position:-960px -540px}
+.check_agree .ico_focused {outline:1px dotted #000;outline:-webkit-focus-ring-color auto 5px}
+.check_agree .inp_check:checked + .lab_check .ico_agreecheck {background-position:-960px -540px}
+
+.wrap_btn {overflow:hidden;width:285px;margin:30px auto 29px}
+.wrap_btn .img_eternal {float:left;width:135px;height:45px}
+.wrap_btn .btn_complete {height:48px;margin-right:15px;background-position:-560px -540px}
+.wrap_btn .btn_close {background-position:-710px -540px}
+.tit_phone {margin-left:6px;padding-left:28px;font-size:18px;color:#0f0f0f;background-position:0 4px}
+.tit_noti {margin-left:11px;padding-left:29px;font-weight:normal;font-size:14px;color:#8d8d8d;background-position:0 -30px}
+.list_noti {margin:6px 0 10px;padding-top:4px;border-top:1px solid #c6c6c6;color:#8d8d8d}
+.list_noti li {padding-left:4px;line-height:20px;font-size:13px;letter-spacing:-1px}
+.list_noti .link_cs {font-weight:bold;color:#d35a11}
+.eternal_layer .layer_foot {position:absolute;top:-33px;right:-1px}
+.eternal_layer .layer_foot .btn_close {width:28px;height:28px;background-position:-920px -510px}
+
+.video_layer {z-index:9999;position:absolute;top:240px;left:50%;margin-left:-471px;width:943px;height:530px;background-color:#fff}
+.video_layer .eternal_video {width:943px;height:530px}
+.video_layer .layer_foot {position:absolute;top:-33px;right:-1px}
+.video_layer .btn_close {width:28px;height:28px;background-position:-920px -510px}
+</style>
+
+<body>
+	<div id="daumPromotion">
+	    <div id="daumHead">
+	        <h1 class="tit_eternal">
+	        	<a href="#none" target="_blank" class="img_eternal">삼국지 이터널</a>
+	        </h1>
+	    </div><!-- //daumHead -->
+	    <hr class="hide">
+	    <div id="daumContent">
+    		<h2 class="img_eternal tit_event">모든 삼국지에 전쟁을 고한다 삼국지 이터널 5월 OPEN BETA</h2>
+    		<a href="#none" class="img_eternal link_video">영상보기</a>
+	    	
+	    	<a href="#none" id="btnApply" class="img_eternal link_apply">오픈 알리미 신청</a>
+	    	
+	    	<strong class="screen_out">삼국지 이터널 SNS 알리기</strong>
+	    	<ul class="list_sns">
+				<li><a href="#none" class="img_eternal link_twi">트위터 알리기</a></li>
+				<li><a href="#none" class="img_eternal link_face">페이스북 알리기</a></li>
+				<li><a href="#none" class="img_eternal link_story">카카오스토리 알리기</a></li>
+			</ul>
+			<div class="bg_flash"></div><!-- 플래시 영역입니다. -->
+	    </div><!-- //daumContent -->
+	    <hr class="hide">
+	    <div id="dimmedLayer" class="dimmed_layer" style="display:none;height:1085px"></div>
+	    <div id="eternalLayer" class="eternal_layer" style="display:none">
+	    		<div class="inner_eternal_layer">
+	    			<div class="layer_head">
+	    				<strong class="img_eternal">오픈 알리미 신청</strong>
+	    				<p>삼국지 이터널의 오픈 소식 및 다양한 뉴스를<br><span class="txt_g">오픈 알리미</span>로 편리하게 받아보세요!</p>
+	    			</div>
+	    			<div class="layer_body">
+    					<form action="#none" name="open_noti">
+    						<fieldset>
+    							<legend class="screen_out">오픈 알리미 신청 핸드폰 번호 등록 폼</legend>
+    							<strong class="ico_eternal tit_phone">휴대폰 번호 입력</strong>
+    							<div class="cont_apply">
+    								<div class="event_phone">
+		    							<div id="opt" class="opt_comm"> <!-- 펼침시 클래스 opt_open 부여 -->
+											<div class="screen_out">휴대폰 앞번호 선택상자</div>
+											<span class="screen_out">선택내용 : </span><a href="#none" id="linkSelect" class="ico_comm link_selected">선택</a> <input type="hidden" value="선택" />
+											<div class="box_opt">
+												<div class="screen_out">선택옵션</div>
+												<ul id="listOpt" class="list_opt">
+													<li class="on"><a href="#none" class="link_option">010</a></li>
+													<li class=""><a href="#none" class="link_option">011</a></li>
+													<li class=""><a href="#none" class="link_option">016</a></li>
+													<li class=""><a href="#none" class="link_option">017</a></li>
+													<li class=""><a href="#none" class="link_option">018</a></li>
+													<li class=""><a href="#none" class="link_option">019</a></li>
+												</ul>
+											</div> 
+										</div>
+										<label for="number2" class="screen_out">핸드폰 중간번호</label>
+										<input type="text" name="number" id="number2" class="tf_phone" maxlength="4">
+										<label for="number3" class="screen_out">핸드폰 뒷번호</label>
+										<input type="text" name="number" id="number3" class="tf_phone" maxlength="4">
+									</div>
+
+									<div class="check_agree">
+										<input type="checkbox" id="Agree" name="Agreecheck" class="inp_check">
+										<label for="Agree" class="lab_check"><!-- 선택시 on 클래스 추가 -->
+											<span class="img_eternal ico_agreecheck ico_focused"></span><!--  input 요소 초점 발생시 ico_focused 클래스 추가 -->
+											<span class="txt_g">오픈 알리미</span>를 통해 삼국지 이터널 소식을 받아보겠습니다.
+										</label>
+									</div>
+
+
+								</div>
+								<div class="wrap_btn">
+									<button type="submit" class="img_eternal btn_complete">신청완료</button><button type="button" class="img_eternal btn_close">오픈 알리미 신청 레이어 닫기</button>
+								</div>
+								<strong class="ico_eternal tit_noti">알려드립니다.</strong>
+								<ul class="list_noti">
+									<li>- 삼국지 이터널 소식을 받아 볼 수 있는 정확한 휴대폰 정보를 입력해주세요.<br>&nbsp;&nbsp;정확하지 않은 번호 입력 시 정보를 받아보실 수 없습니다.</li>
+									<li>- 삼국지 이터널의 오픈 안내 및 홍보를 위한 목적으로 휴대폰 번호를 입력 받습니다. <br>&nbsp;&nbsp;수집 된 전화번호는 해당 목적 외에는 이용되지 않습니다.</li>
+									<li>- 수집 된 휴대폰 번호는 수집 시점으로부터 3개월 동안 보관 후 일괄 파기 될 예정입니다. </li>
+									<li>- 출시 알람 해지를 위해서는 고객센터에 문의주시기 바랍니다. <a href="#none" target="_blank" class="link_cs">[고객센터 바로가기]</a></li>
+								</ul>
+    						</fieldset>
+    					</form>
+	    			</div>
+	    			<div class="layer_foot"><a href="#none" id="btnClose" class="img_eternal btn_close">오픈 알리미 신청 레이어 닫기</a></div>
+	    		</div>
+	    </div><!-- // eternal_layer -->
+	    
+<script>
+	       
+		// 알림 신청 버튼 레이어 열기, 닫기
+		var dimmed = document.getElementById("dimmedLayer"),
+			layer = document.getElementById("eternalLayer"),
+			btnApply = document.getElementById("btnApply"),
+			btnClose = document.getElementById("btnClose");
+	   
+	    btnApply.onclick = function(){
+	    	dimmed.style.display="block";
+			layer.style.display="block";
+	    };
+	    btnClose.onclick = function(){
+	    	dimmed.style.display="none";
+			layer.style.display="none";
+	    }
+			
+		// 앞 번호 선택 열기 닫기
+		var opt = document.getElementById("opt"),
+			linkSelect = document.getElementById("linkSelect");
+		
+		linkSelect.onclick = function() {
+			var optClass = opt.getAttribute("class");
+			if (optClass=="opt_comm opt_open"){
+				opt.className="opt_comm";
+			}else{
+				opt.className="opt_comm opt_open";
+			};
+		};
+		var option = document.getElementById("listOpt").getElementsByTagName("a");
+		for (var i = 0, max = option.length; i < max; i++) {
+			option[i].onclick = function(){
+				for (var i = 0, max = option.length; i < max; i++) {
+					option[i].parentNode.className = "";
+				};
+				this.parentNode.className = "on";
+				linkSelect.innerText = this.innerText;
+				opt.className="opt_comm";
+			};
+		};
+			
+		// 전화번호 다 입력하기
+		var form = document.open_noti;
+		form.onsubmit = function(){
+			error();
+		}
+		
+		function error() {
+		    if(form.number.value == "") {
+				alert("전화번호를 입력 하라!!!");
+		        form.number.focus();
+		        return false;
+		     }
+		}
+			
+</script>
+			
+	    <div id="daumFoot" class="eternal_foot">
+	    	<h2 class="screen_out">삼국지 이터널 게임 정보</h2>
+	    	<small class="address_copyright">Copyright © <a href="http://game.daum.net" target="_blank" class="link_copyright">Daum Games</a> Co.,Ltd.</small>
+	    	<a href="http://game.daum.net" target="_blank" class="img_eternal link_daumgames">Daum Games</a>
+	    	<span class="img_eternal link_company">N2O</span>
+	    </div><!-- //daumFoot -->
+	</div>
+
+</body>
+</html>
